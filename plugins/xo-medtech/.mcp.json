@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "xo": {
+      "type": "http",
+      "url": "https://mcp.xomedtech.com/mcp"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install -g @anthropic-ai/claude-code
+      - name: Validate marketplace
+        run: claude plugin validate . --strict
+      - name: Validate plugin
+        run: claude plugin validate plugins/xo-medtech --strict
+      - name: Versions match
+        run: |
+          v=$(node -p "require('./plugins/xo-medtech/.claude-plugin/plugin.json').version")
+          for f in plugins/xo-medtech/.*-plugin/plugin.json; do
+            o=$(node -p "require('./$f').version")
+            [ "$o" = "$v" ] || { echo "$f is $o, expected $v"; exit 1; }
+          done

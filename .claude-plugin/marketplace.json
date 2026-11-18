@@ -1,0 +1,16 @@
+{
+  "name": "xo-medtech",
+  "description": "Plugins for the XO Medtech platform.",
+  "owner": {
+    "name": "XO Medtech",
+    "url": "https://xomedtech.com"
+  },
+  "plugins": [
+    {
+      "name": "xo-medtech",
+      "description": "Work your XO Medtech campaigns from your AI assistant: plan outreach, draft in your voice, run the daily to-do list, send approved contacts to your CRM, and check campaign health.",
+      "source": "./plugins/xo-medtech",
+      "category": "productivity"
+    }
+  ]
+}
