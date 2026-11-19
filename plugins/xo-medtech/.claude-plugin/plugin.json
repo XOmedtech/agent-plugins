@@ -1,7 +1,7 @@
 {
   "name": "xo-medtech",
   "displayName": "XO Medtech",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Work your XO Medtech campaigns from your AI assistant: plan outreach, draft in your voice, run the daily to-do list, send approved contacts to your CRM, and check campaign health.",
   "author": {
     "name": "XO Medtech",
@@ -10,7 +10,6 @@
   "homepage": "https://xomedtech.com",
   "privacyPolicyUrl": "https://xomedtech.com/privacy-policy",
   "documentationUrl": "https://github.com/xomedtech/agent-plugins/tree/main/plugins/xo-medtech#readme",
-  "supportUrl": "mailto:hello@xomedtech.com",
   "repository": "https://github.com/xomedtech/agent-plugins",
   "license": "MIT",
   "keywords": ["medtech", "sales", "outreach", "campaigns", "crm"]
