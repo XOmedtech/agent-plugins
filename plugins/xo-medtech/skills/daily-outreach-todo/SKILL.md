@@ -31,6 +31,7 @@ Write: `mark_contacted`, `complete_sequence_step`, `mark_replied`, `remove_from_
 - Never call `mark_contacted`, `complete_sequence_step` or `mark_replied` unless the user has said, for that contact, that it happened. "Looks good" is not "I sent it".
 - These tools send nothing. Say so if the user seems to expect XO to send the message.
 - Ask before `remove_from_sequence`. It takes the contact out of the outreach list.
-- If something was recorded by mistake, `revert_step_completion` undoes the last completion for that contact.
+- If something was recorded by mistake, `revert_step_completion` undoes the last step marked done for that contact. Its result has `undone` (the step that reopened) and `notes`. Read the notes to the user: they say whether the contact still counts as contacted, that the due date restarted, and what a CRM kept.
+- If a `mark_contacted` result has `warnings`, tell the user what it says before doing anything else. It means the send was recorded but the to-do list did not move, and undo will not reverse it.
 - If `get_campaign_sequence` is not available, sequences are not enabled for this organization. Say that and stop.
 - If the write tools are not available, the connection is view-only. Show the list, and tell the user to reconnect XO and allow changes to record progress.
