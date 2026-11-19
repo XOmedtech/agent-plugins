@@ -37,6 +37,10 @@ The first time a skill needs your data, your browser opens the XO sign-in page. 
 
 In XO, go to Settings and open Connected apps to see every connection and revoke any of them. Revoking takes effect straight away.
 
+## Privacy
+
+See the [XO Medtech privacy policy](https://xomedtech.com/privacy-policy).
+
 ## Support
 
 Email hello@xomedtech.com.
