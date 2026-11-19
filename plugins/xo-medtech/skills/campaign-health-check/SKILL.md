@@ -17,7 +17,7 @@ A read-only report. It changes nothing in XO.
 2. **Overview (all campaigns).** Call `get_dashboard_summary` and `list_campaigns`. Report totals, then one row per campaign: companies, contacts, and the share of each contacted.
 3. **One campaign.** Call `get_campaign_analytics`, then `get_campaign_sequence` and `list_replied_contacts` for that campaign.
    - Progress: contactable versus contacted, for companies and contacts.
-   - To-do list: how many contacts are overdue, due today and upcoming, from the summary counts.
+   - To-do list: how many contacts are overdue, due today and due later, read from `by_bucket`. It counts the whole list, while `records` is capped by `limit`, so never count rows to get a total. Pass `include_completed: false` and a small `limit`.
    - Replies: who replied, newest first, with company.
 4. **Find the gaps.** Call `search_leads` with `contacted: false`, sorted by score, and name the five highest-scoring companies nobody has contacted.
 5. **Recommend.** End with up to three next actions drawn from the data, such as "12 contacts are overdue" or "five high-score companies have no outreach". Offer to help with one. Do not start it unless the user says so.

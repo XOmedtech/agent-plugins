@@ -16,7 +16,7 @@ Write: `mark_contacted`, `complete_sequence_step`, `mark_replied`, `remove_from_
 
 1. **Find the campaign.** Call `list_campaigns` and ask which campaign if the user has several and did not name one.
 2. **Load the list.** Call `get_campaign_sequence` with `include_completed: false`. Pass `only_mine: true` when the user asks for their own territory.
-3. **Show what is due.** Lead with the summary counts, then list contacts grouped by due bucket, overdue first. Show contact, company, the next action and its channel.
+3. **Show what is due.** Lead with the counts per due bucket from `by_bucket`, which covers the whole list. Then list the returned contacts grouped by bucket, overdue first, with contact, company, the next action and its channel. If `total` is larger than the rows returned, say how many more there are.
 4. **Go one contact at a time.** Call `get_contact_activity` to get the step's subject and message and show it in full so the user can copy it. Offer edits with `update_draft` if they want changes first.
 5. **Record the outcome the user reports:**
    - They sent it: `mark_contacted` with the channel they used.
